@@ -112,7 +112,7 @@ Baby.prototype.play = function(){
   1. When in the global this will be the window object.
   2. When calling a method on an object the part before the dot will be this.
   3. When using a constructor function.  This is the object used by the function.
-  4. 
+  4. When using call() or apply() the first argument passed through defines this. 
 */
 
 
