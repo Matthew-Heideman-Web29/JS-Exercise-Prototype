@@ -48,13 +48,14 @@ Person.prototype.eat = function(someFood){
   if(this.stomach.length < 10){
    return this.stomach.push(someFood);
   }
- }
- Person.prototype.poop = function(){
+}
+Person.prototype.poop = function(){
    return this.stomach = []
- }
- Person.prototype.toString = function(){
+}
+Person.prototype.toString = function(){
    return `${this.name}, ${this.age}`
- }
+}
+
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -87,6 +88,7 @@ Car.prototype.drive = function(distance){
     return `I ran out of fuel at ${this.odometer} miles!`
   }
 }
+
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -94,8 +96,13 @@ Car.prototype.drive = function(distance){
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age),
+  this.favoriteToy = favoriteToy
+}
+Baby.prototype = Object.create(Person.prototype)
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`;
 }
 
 /* 
