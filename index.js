@@ -109,8 +109,8 @@ Baby.prototype.play = function(){
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
+  1. When in the global this will be the window object.
+  2. When calling a method on an object the part before the dot will be this.
   3. 
   4. 
 */
